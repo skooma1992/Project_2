@@ -19,14 +19,14 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    Fish.associate = function (models) {
+    /*Fish.associate = function (models) {
 
         Fish.belongsTo(models.location, {
             foreignKey: {
                 allowNull: false
             }
         });
-    };
+    };*/
 
-    return Post;
+    return Fish;
 };

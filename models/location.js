@@ -1,4 +1,4 @@
-module.exports = function(sequelize, Sequelize){
+module.exports = function(sequelize, DataTypes){
 	var Location = sequelize.define("location", {
         latitude: {
             type: DataTypes.STRING,
