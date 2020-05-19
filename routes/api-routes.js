@@ -2,6 +2,8 @@
 var db = require("../models");
 var passport = require("../config/passport");
 
+
+
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -46,8 +48,46 @@ module.exports = function(app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
+        profile_pic: req.user.profile_pic
+
       });
     }
   });
+
+/****************************************************************************************** */
+/****************************************************************************************** */
+/****************************************************************************************** */
+
+//Trying to UPDATE post SET profile_pic = req.body WHERE id = req.params.id;
+
+app.put("/api/user_data", function(req, res) {
+
+
+  console.log(req.body.url);
+
+db.User.update(
+  {
+  profile_pic: req.body.url,
+}, 
+{
+  where: 
+  {
+    id: req.body.id   
+  }
+})
+.then(function() {
+  res.redirect(307, "/members");
+})
+.catch(function(err) {
+  res.status(401).json(err);
+});
+
+});
+
+   
+
+/****************************************************************************************** */
+/****************************************************************************************** */
+/****************************************************************************************** */
 };

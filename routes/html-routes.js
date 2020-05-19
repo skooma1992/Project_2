@@ -28,4 +28,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
+  //Route to upload-photo.html
+  app.get("/upload-photo", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/upload-photo.html"));
+  });
+
+  //Route map.html
+  app.get("/map", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/map.html"));
+  });
+
 };
