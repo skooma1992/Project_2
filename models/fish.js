@@ -9,12 +9,12 @@ module.exports = function (sequelize, DataTypes) {
         },
         Length: {
             type: DataTypes.STRING ,
-            allowNull: false,
+            allowNull: true,
             len: [1]
         },
         Weight: {
-            type: DataTypes.INTEGER ,
-            allowNull: false,
+            type: DataTypes.STRING ,
+            allowNull: true,
             len: [1]
         }
     });
