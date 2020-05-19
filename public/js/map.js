@@ -1,4 +1,9 @@
-var map, infoWindow;
+//////////////////////////////////////////////////////////////////////////
+  // map.js
+  var pos;
+  var map, infoWindow;
+  const markerBtn = document.getElementById("markerBtn");
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},
@@ -9,13 +14,13 @@ function initMap() {
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
+      pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
 
       infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
+      infoWindow.setContent("Your location.");
       infoWindow.open(map);
       map.setCenter(pos);
     }, function() {
@@ -35,13 +40,9 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
-const markerBtn = document.getElementById("markerBtn")
-
-const myLatLng = {lat: 37.7510, lng: -97.8220};
-
   function createMarker() {
     newMarker = new google.maps.Marker({
-        position: myLatLng,
+        position: pos,
         map: map,
         title: "Test Marker",
         animation: google.maps.Animation.DROP,
@@ -52,3 +53,5 @@ const myLatLng = {lat: 37.7510, lng: -97.8220};
 markerBtn.addEventListener("click", function() {
   createMarker();
 })
+
+/////////////////////////////////////////////////////////////////////////

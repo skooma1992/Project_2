@@ -2,34 +2,32 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>ReeledIn Login</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link href="stylesheets/style.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="./img/reeledin-favicon2.png">
 </head>
 
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
+<body id="main-body">
+  
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Login Form</h2>
+      <div class="col-md-6 col-md-offset-3 login-container">
+        <div class= "text-left" id="login-header">login</div>
         <form class="login">
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
+            
+            <input type="email" class="form-control" id="email-input" placeholder="email">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
+            
+            <input type="password" class="form-control" id="password-input" placeholder="password">
           </div>
-          <button type="submit" class="btn btn-default">Login</button>
+          <div class="text-right">
+          <button type="submit" class="btn btn-default" id="login-button">login</button>
+          </div>
         </form>
         <br />
         <p>Or sign up <a href="/">here</a></p>
